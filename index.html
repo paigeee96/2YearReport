@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes — Research Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero wrap">
+  <div class="eyebrow">Research Report — Working Draft</div>
+  <h1>Watching the data <em>move</em> with the footage.</h1>
+  <p class="dek">Two movements, each shown three ways: the full recordings side by side, a shorter step side by side (graph already baked into the footage), then a static hip/knee/ankle comparison.</p>
+  <div class="meta-row">
+    <span><b>Format —</b> static site, GitHub Pages ready</span>
+    <span><b>Charting —</b> Chart.js (CDN), for the comparison panel only</span>
+    <span><b>Step videos —</b> pre-rendered with graph overlay (e.g. from MATLAB)</span>
+  </div>
+</header>
+
+<section class="wrap" id="movement-1">
+  <div class="movement">
+    <div class="movement-heading">
+      <span class="num">Movement 1</span>
+      <h2 class="fig-title" style="margin:0;">Name of movement 1</h2>
+    </div>
+
+    <p class="fig-note">Full-length recordings, side by side.</p>
+    <div class="compare-grid" style="margin-bottom:16px;">
+      <div class="panel video-card">
+        <video id="m1LongA" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video A — full length</span></div>
+      </div>
+      <div class="panel video-card">
+        <video id="m1LongB" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video B — full length</span></div>
+      </div>
+    </div>
+    <div class="transport" style="margin-bottom:44px;">
+      <button class="sync-btn" id="m1LongSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    </div>
+
+    <p class="fig-note">A shorter step, side by side. These clips already have the moving graph baked into the frame (e.g. rendered in MATLAB), so they just play as ordinary video — no separate chart syncing needed.</p>
+    <div class="compare-grid" style="margin-bottom:16px;">
+      <div class="panel video-card">
+        <video id="m1StepA" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video A — step, with graph overlay</span></div>
+      </div>
+      <div class="panel video-card">
+        <video id="m1StepB" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video B — step, with graph overlay</span></div>
+      </div>
+    </div>
+    <div class="transport" style="margin-bottom:44px;">
+      <button class="sync-btn" id="m1StepSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    </div>
+
+    <div class="combined-intro">
+      <h3>Movement 1 — hip, knee, ankle: Video A vs Video B</h3>
+      <div>
+        <span class="legend-chip"><span class="sw" style="background:#0E7C7B;"></span>Video A</span>
+        <span class="legend-chip"><span class="sw" style="background:#D6572D;"></span>Video B</span>
+      </div>
+    </div>
+    <div class="combined-grid">
+      <div class="panel combined-joint-panel">
+        <div class="joint-title">Hip</div>
+        <div class="combined-chart-holder"><canvas id="m1Combined_hip"></canvas></div>
+      </div>
+      <div class="panel combined-joint-panel">
+        <div class="joint-title">Knee</div>
+        <div class="combined-chart-holder"><canvas id="m1Combined_knee"></canvas></div>
+      </div>
+      <div class="panel combined-joint-panel">
+        <div class="joint-title">Ankle</div>
+        <div class="combined-chart-holder"><canvas id="m1Combined_ankle"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="movement-2">
+  <div class="movement">
+    <div class="movement-heading">
+      <span class="num">Movement 2</span>
+      <h2 class="fig-title" style="margin:0;">Name of movement 2</h2>
+    </div>
+
+    <p class="fig-note">Full-length recordings, side by side.</p>
+    <div class="compare-grid" style="margin-bottom:16px;">
+      <div class="panel video-card">
+        <video id="m2LongA" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video A — full length</span></div>
+      </div>
+      <div class="panel video-card">
+        <video id="m2LongB" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video B — full length</span></div>
+      </div>
+    </div>
+    <div class="transport" style="margin-bottom:44px;">
+      <button class="sync-btn" id="m2LongSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    </div>
+
+    <p class="fig-note">A shorter step, side by side. These clips already have the moving graph baked into the frame (e.g. rendered in MATLAB), so they just play as ordinary video — no separate chart syncing needed.</p>
+    <div class="compare-grid" style="margin-bottom:16px;">
+      <div class="panel video-card">
+        <video id="m2StepA" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video A — step, with graph overlay</span></div>
+      </div>
+      <div class="panel video-card">
+        <video id="m2StepB" controls muted playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+        </video>
+        <div class="label"><span>Video B — step, with graph overlay</span></div>
+      </div>
+    </div>
+    <div class="transport" style="margin-bottom:44px;">
+      <button class="sync-btn" id="m2StepSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    </div>
+
+    <div class="combined-intro">
+      <h3>Movement 2 — hip, knee, ankle: Video A vs Video B</h3>
+      <div>
+        <span class="legend-chip"><span class="sw" style="background:#0E7C7B;"></span>Video A</span>
+        <span class="legend-chip"><span class="sw" style="background:#D6572D;"></span>Video B</span>
+      </div>
+    </div>
+    <div class="combined-grid">
+      <div class="panel combined-joint-panel">
+        <div class="joint-title">Hip</div>
+        <div class="combined-chart-holder"><canvas id="m2Combined_hip"></canvas></div>
+      </div>
+      <div class="panel combined-joint-panel">
+        <div class="joint-title">Knee</div>
+        <div class="combined-chart-holder"><canvas id="m2Combined_knee"></canvas></div>
+      </div>
+      <div class="panel combined-joint-panel">
+        <div class="joint-title">Ankle</div>
+        <div class="combined-chart-holder"><canvas id="m2Combined_ankle"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="setup-note">
+    <strong>Placeholder content:</strong> all eight clips above are public-domain sample videos, and the hip/knee/ankle comparison charts are randomly generated sample curves, just so you can see the layout end to end. See <code>README.md</code> for exactly which files/variables to replace with your real videos and joint-angle data.
+  </div>
+</section>
+
+<footer class="wrap">
+  Built as a static scaffold — no backend required. Push this folder to a GitHub repo, enable Pages in Settings → Pages → Deploy from branch, and it's live.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
