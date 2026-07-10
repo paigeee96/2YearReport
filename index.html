@@ -11,11 +11,11 @@
 <header class="hero wrap">
   <div class="eyebrow">Research Report — Working Draft</div>
   <h1>Watching the data <em>move</em> with the footage.</h1>
-  <p class="dek">Two movements, each shown three ways: the full recordings side by side, a shorter step side by side (graph already baked into the footage), then a static hip/knee/ankle comparison.</p>
+  <p class="dek">Two movements, each shown three ways: the full trial (NI and Para side by side in-frame), a trimmed clip with angle graph overlay, then a static hip/knee/ankle comparison.</p>
   <div class="meta-row">
     <span><b>Format —</b> static site, GitHub Pages ready</span>
     <span><b>Charting —</b> Chart.js (CDN), for the comparison panel only</span>
-    <span><b>Step videos —</b> pre-rendered with graph overlay (e.g. from MATLAB)</span>
+    <span><b>Video —</b> NI/Para pre-combined side by side in each clip</span>
   </div>
 </header>
 
@@ -26,49 +26,27 @@
       <h2 class="fig-title" style="margin:0;">Name of movement 1</h2>
     </div>
 
-    <p class="fig-note">Full-length recordings, side by side.</p>
-    <div class="compare-grid" style="margin-bottom:16px;">
-      <div class="panel video-card">
-        <video id="m1LongA" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video A — full length</span></div>
-      </div>
-      <div class="panel video-card">
-        <video id="m1LongB" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video B — full length</span></div>
-      </div>
-    </div>
-    <div class="transport" style="margin-bottom:44px;">
-      <button class="sync-btn" id="m1LongSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    <p class="fig-note">Full-length trial — NI and Para participants side by side.</p>
+    <div class="panel single-video-panel">
+      <video id="m1Full" controls muted playsinline>
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+      </video>
+      <div class="label"><span>Movement 1 — full length trial</span></div>
     </div>
 
-    <p class="fig-note">A shorter step, side by side. These clips already have the moving graph baked into the frame (e.g. rendered in MATLAB), so they just play as ordinary video — no separate chart syncing needed.</p>
-    <div class="compare-grid" style="margin-bottom:16px;">
-      <div class="panel video-card">
-        <video id="m1StepA" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video A — step, with graph overlay</span></div>
-      </div>
-      <div class="panel video-card">
-        <video id="m1StepB" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video B — step, with graph overlay</span></div>
-      </div>
-    </div>
-    <div class="transport" style="margin-bottom:44px;">
-      <button class="sync-btn" id="m1StepSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    <p class="fig-note">Trimmed clip with joint-angle graph overlay — NI and Para side by side.</p>
+    <div class="panel single-video-panel">
+      <video id="m1Step" controls muted playsinline>
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+      </video>
+      <div class="label"><span>Movement 1 — trimmed, with angle overlay</span></div>
     </div>
 
     <div class="combined-intro">
-      <h3>Movement 1 — hip, knee, ankle: Video A vs Video B</h3>
+      <h3>Movement 1 — hip, knee, ankle: NI vs Para</h3>
       <div>
-        <span class="legend-chip"><span class="sw" style="background:#0E7C7B;"></span>Video A</span>
-        <span class="legend-chip"><span class="sw" style="background:#D6572D;"></span>Video B</span>
+        <span class="legend-chip"><span class="sw" style="background:#0E7C7B;"></span>NI</span>
+        <span class="legend-chip"><span class="sw" style="background:#D6572D;"></span>Para</span>
       </div>
     </div>
     <div class="combined-grid">
@@ -95,49 +73,27 @@
       <h2 class="fig-title" style="margin:0;">Name of movement 2</h2>
     </div>
 
-    <p class="fig-note">Full-length recordings, side by side.</p>
-    <div class="compare-grid" style="margin-bottom:16px;">
-      <div class="panel video-card">
-        <video id="m2LongA" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video A — full length</span></div>
-      </div>
-      <div class="panel video-card">
-        <video id="m2LongB" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video B — full length</span></div>
-      </div>
-    </div>
-    <div class="transport" style="margin-bottom:44px;">
-      <button class="sync-btn" id="m2LongSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    <p class="fig-note">Full-length trial — NI and Para participants side by side.</p>
+    <div class="panel single-video-panel">
+      <video id="m2Full" controls muted playsinline>
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+      </video>
+      <div class="label"><span>Movement 2 — full length trial</span></div>
     </div>
 
-    <p class="fig-note">A shorter step, side by side. These clips already have the moving graph baked into the frame (e.g. rendered in MATLAB), so they just play as ordinary video — no separate chart syncing needed.</p>
-    <div class="compare-grid" style="margin-bottom:16px;">
-      <div class="panel video-card">
-        <video id="m2StepA" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video A — step, with graph overlay</span></div>
-      </div>
-      <div class="panel video-card">
-        <video id="m2StepB" controls muted playsinline>
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
-        </video>
-        <div class="label"><span>Video B — step, with graph overlay</span></div>
-      </div>
-    </div>
-    <div class="transport" style="margin-bottom:44px;">
-      <button class="sync-btn" id="m2StepSyncBtn"><span class="dot"></span><span class="btn-label">Play both, synced</span></button>
+    <p class="fig-note">Trimmed clip with joint-angle graph overlay — NI and Para side by side.</p>
+    <div class="panel single-video-panel">
+      <video id="m2Step" controls muted playsinline>
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+      </video>
+      <div class="label"><span>Movement 2 — trimmed, with angle overlay</span></div>
     </div>
 
     <div class="combined-intro">
-      <h3>Movement 2 — hip, knee, ankle: Video A vs Video B</h3>
+      <h3>Movement 2 — hip, knee, ankle: NI vs Para</h3>
       <div>
-        <span class="legend-chip"><span class="sw" style="background:#0E7C7B;"></span>Video A</span>
-        <span class="legend-chip"><span class="sw" style="background:#D6572D;"></span>Video B</span>
+        <span class="legend-chip"><span class="sw" style="background:#0E7C7B;"></span>NI</span>
+        <span class="legend-chip"><span class="sw" style="background:#D6572D;"></span>Para</span>
       </div>
     </div>
     <div class="combined-grid">
@@ -159,7 +115,7 @@
 
 <section class="wrap">
   <div class="setup-note">
-    <strong>Placeholder content:</strong> all eight clips above are public-domain sample videos, and the hip/knee/ankle comparison charts are randomly generated sample curves, just so you can see the layout end to end. See <code>README.md</code> for exactly which files/variables to replace with your real videos and joint-angle data.
+    <strong>Placeholder content:</strong> all four clips above are public-domain sample videos, and the hip/knee/ankle comparison charts are randomly generated sample curves, just so you can see the layout end to end. See <code>README.md</code> for exactly which files/variables to replace with your real videos and joint-angle data.
   </div>
 </section>
 
